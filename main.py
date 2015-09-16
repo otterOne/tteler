@@ -3,6 +3,12 @@
 
 import pygame
 
+def isCharInString(letter,text):
+    for c in text:
+        if c == letter:
+            return True
+    return False
+
 def makeGrid(x, y):
     grid = []
     for i in range(y):
@@ -16,7 +22,7 @@ def main():
     
     locX, locY = 0
     face = 0
-
+    obstacles = "OT~|_"
     
     
     while True:
@@ -27,9 +33,21 @@ def main():
         for event in events:
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
-                    #Move player left
+                    face = 0
+                    if not isCharInString(grid[locY][locX-1],obstacles):
+                        locX -= 1
                 if event.key == pygame.K_RIGHT:
-                    #Move player right
+                    face = 2
+                    if not isCharInString(grid[locY][locX+1],obstacles):
+                        locX += 1
+                if event.key == pygame.K_DOWN:
+                    face = 3
+                    if not isCharInString(grid[locY+1][locX],obstacles):
+                        locX += 1
+                if event.key == pygame.K_UP:
+                    face = 1
+                    if not isCharInString(grid[locY-1][locX],obstacles):
+                        locX -= 1
 
         #Update
 
