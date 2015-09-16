@@ -5,7 +5,8 @@ import pygame
 
 
 def main():
-    
+    locX, locY = 0
+    face = 0
     while True:
         
         
