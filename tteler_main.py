@@ -3,10 +3,22 @@
 
 import pygame
 
+def makeGrid(x, y):
+    grid = []
+    for i in range(y):
+        grid.append([])
+        for j in range(x):
+            grid[i].append(' ')
+
+    return grid
 
 def main():
+    
     locX, locY = 0
     face = 0
+
+    
+    
     while True:
         
         
@@ -19,28 +31,8 @@ def main():
                 if event.key == pygame.K_RIGHT:
                     #Move player right
 
-
-
-
-
-
-
-
-
         #Update
 
-
-
-
-
-
-
-
-
-
-
-
-
         #Rendering
-        print("surprise muddafakka!!")
+        for 
         
