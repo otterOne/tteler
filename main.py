@@ -1,6 +1,5 @@
 #!/bin/python3
 
-
 import pygame
 
 def isCharInString(letter,text):
@@ -14,7 +13,7 @@ def makeGrid(x, y):
     for i in range(y):
         grid.append([])
         for j in range(x):
-            grid[i].append(' ')
+            grid[i].append('x')
 
     return grid
 
@@ -23,7 +22,8 @@ def main():
     locX, locY = 0
     face = 0
     obstacles = "OT~|_"
-    
+
+    grid = makeGrid(50, 50)
     
     while True:
         
@@ -52,5 +52,13 @@ def main():
         #Update
 
         #Rendering
-        for 
+        for y in range(len(grid)):
+            for x in range(len(grid[y])):
+                print(grid[y][x], end='')
+
+            print('/n')
+
+                
+            
+
         
